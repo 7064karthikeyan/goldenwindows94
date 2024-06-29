@@ -275,3 +275,109 @@ header {
     top: 0;
     z-index: 1000; /* Ensure it stays on top of other elements */
 }
+.skills-padding{
+    padding: 70px 0;
+   }
+   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+header img {
+    height: 80px; /* Adjust this to change the logo size */
+    width: auto; /* Maintain aspect ratio */
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #444;
+    }
+
+    nav a:first-child {
+        border-top: none;
+    }
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex; /* Uses flexbox for layout */
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+    height: 120%; /* Ensures slides take full height */
+}
+
+.slides img {
+    width: 110%; /* Makes images slightly wider than their container */
+    height: 100%; /* Ensures images take full height */
+    object-fit: none; /* Prevents images from being resized to fit */
+}
+
+.navigation {
+    position: absolute; /* Positioned absolutely within its container */
+    width: 100%; /* Takes full width of its container */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; /* Spaces items evenly */
+    top: 50%; /* Positions it vertically in the middle */
+    transform: translateY(-50%); /* Adjusts vertical position */
+}
+
+.navigation-button {
+    background-color: rgba(255, 230, 4, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.benefits {
+    padding: 20px;
+}
+
+.benefits h2 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.benefits p {
+    text-align: justify;
+    margin: 20px 0;
+}

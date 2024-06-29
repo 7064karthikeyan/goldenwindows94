@@ -12,11 +12,19 @@
             align-items: center;
             background-color: #333;
             padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure it stays on top of other elements */
         }
 
         header img {
             height: 80px; /* Adjust this to change the logo size */
             width: auto; /* Maintain aspect ratio */
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -31,6 +39,26 @@
             color: black;
         }
 
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav a {
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+                border-top: 1px solid #444;
+            }
+
+            nav a:first-child {
+                border-top: none;
+            }
+        }
+
         /* Slider */
         .slider {
             position: relative;
@@ -40,25 +68,25 @@
         }
 
         .slides {
-    display: flex; /* Uses flexbox for layout */
-    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
-    height: 120%; /* Ensures slides take full height */
-}
+            display: flex; /* Uses flexbox for layout */
+            transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+            height: 120%; /* Ensures slides take full height */
+        }
 
-.slides img {
-    width: 110%; /* Makes images slightly wider than their container */
-    height: 100%; /* Ensures images take full height */
-    object-fit: none; /* Prevents images from being resized to fit */
-}
+        .slides img {
+            width: 110%; /* Makes images slightly wider than their container */
+            height: 100%; /* Ensures images take full height */
+            object-fit: none; /* Prevents images from being resized to fit */
+        }
 
-.navigation {
-    position: absolute; /* Positioned absolutely within its container */
-    width: 100%; /* Takes full width of its container */
-    display: flex; /* Uses flexbox for layout */
-    justify-content: space-between; /* Spaces items evenly */
-    top: 50%; /* Positions it vertically in the middle */
-    transform: translateY(-50%); /* Adjusts vertical position */
-}
+        .navigation {
+            position: absolute; /* Positioned absolutely within its container */
+            width: 100%; /* Takes full width of its container */
+            display: flex; /* Uses flexbox for layout */
+            justify-content: space-between; /* Spaces items evenly */
+            top: 50%; /* Positions it vertically in the middle */
+            transform: translateY(-50%); /* Adjusts vertical position */
+        }
 
         .navigation-button {
             background-color: rgba(255, 230, 4, 0.5);
@@ -85,18 +113,16 @@
 </head>
 <body>
     <header>
-        <h1><img src="./images/logo2.png" alt="Golden Windows Logo"></h1>
+        <h1><img src="./images/logo.jpg" alt="Golden Windows Logo"></h1>
         <nav>
-            <a href="index.html">HOME </a>
+            <a href="index.html">HOME</a>
             <a href="about.html">ABOUT US</a>
             <a href="products.html">PRODUCTS</a>
             <a href="contact.html">CONTACT US</a> 
-          
         </nav>
     </header>
     <main>
-        
-        <h2> Welcome to Golden Windows  </h2>
+        <h2>Welcome to Golden Windows</h2>
         <p>Your reliable partner for uPVC windows manufacturing.</p>
     </main>
 
@@ -130,40 +156,8 @@
     </main>
 
     <footer>
-        <p>&copy; Designed and Developed by DSK 2024 Golden Windows. All rights reserved.</p>
+        <p>&copy; Designed and Developed by dsk 2024 Golden Windows. All rights reserved.</p>
         <div class="social-media">
             <p>Follow us on:</p>
             <a href="https://www.instagram.com/golden_windows_94/?igsh=MW8wa2duM29jZzJ1YQ%3D%3D" target="_blank">
-                <img src="./images/insta.jpg" alt="Instagram">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61561317246085" target="_blank">
-                <img src="./images/fb.png" alt="Facebook">
-            </a>
-        </div>
-    </footer>
-
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll(".slides img");
-        const prevButton = document.getElementById("prev");
-        const nextButton = document.getElementById("next");
-
-        function showSlide(index) {
-            if (index >= slides.length) {
-                slideIndex = 0;
-            } else if (index < 0) {
-                slideIndex = slides.length - 1;
-            } else {
-                slideIndex = index;
-            }
-            const offset = -slideIndex * 100 + "%";
-            document.querySelector(".slides").style.transform = `translateX(${offset})`;
-        }
-
-        prevButton.addEventListener("click", () => showSlide(slideIndex - 1));
-        nextButton.addEventListener("click", () => showSlide(slideIndex + 1));
-
-        setInterval(() => showSlide(slideIndex + 1), 5000); // Auto-slide every 5 seconds
-    </script>
-</body>
-</html>
+                <img src="./
