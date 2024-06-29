@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Windows - Home</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        header img {
+            height: 80px; /* Adjust this to change the logo size */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Slider */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full height of the viewport */
+            overflow: hidden;
+        }
+
+        .slides {
+    display: flex; /* Uses flexbox for layout */
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+    height: 120%; /* Ensures slides take full height */
+}
+
+.slides img {
+    width: 110%; /* Makes images slightly wider than their container */
+    height: 100%; /* Ensures images take full height */
+    object-fit: none; /* Prevents images from being resized to fit */
+}
+
+.navigation {
+    position: absolute; /* Positioned absolutely within its container */
+    width: 100%; /* Takes full width of its container */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; /* Spaces items evenly */
+    top: 50%; /* Positions it vertically in the middle */
+    transform: translateY(-50%); /* Adjusts vertical position */
+}
+
+        .navigation-button {
+            background-color: rgba(255, 230, 4, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .benefits {
+            padding: 20px;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .benefits p {
+            text-align: justify;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="./images/logo2.png" alt="Golden Windows Logo"></h1>
+        <nav>
+            <a href="index.html">HOME </a>
+            <a href="about.html">ABOUT US</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="contact.html">CONTACT US</a> 
+          
+        </nav>
+    </header>
+    <main>
+        
+        <h2> Welcome to Golden Windows  </h2>
+        <p>Your reliable partner for uPVC windows manufacturing.</p>
+    </main>
+
+    <main>
+        <div class="slider">
+            <div class="slides">
+                <img src="./images/ogcover.png" alt="Slider Image 1">
+                <img src="./images/cover2.jpg" alt="Slider Image 2">
+                <img src="./images/cover3.jpg" alt="Slider Image 3">
+            </div>
+            <div class="navigation">
+                <button class="navigation-button" id="prev">&#10094;</button>
+                <button class="navigation-button" id="next">&#10095;</button>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <h2>Benefits of uPVC</h2>
+            <h3>Low Maintenance</h3>
+            <p>One of the biggest advantages of installing double glazing is that it significantly increases the insulation within your home. According to the Energy Saving Trust, replacing single glazed window with B-rated double glazing can help create an annual saving of around £170. However, the effectiveness of double glazing will depend on three different factors; the window rating, quality of installation and frame material. The British Fenestration Rating Council (BRFC) have devised a Window Energy Rating Scheme (WERS) that works in a similar way to the Energy Rating label, which is more commonly found on household appliances likes refrigerators and washing machines.</p>
+
+            <h3>Energy Efficient</h3>
+            <p>Double glazing has been designed to ensure heat stays inside your home. During cooler months, double glazing helps lower energy consumption, thereby reducing energy bills. However, the heat retention of a double glazed window is determined by the energy rating of the window.</p>
+
+            <h3>Enhanced Security</h3>
+            <p>Apart from lowering energy consumption, double glazing also helps to insulate your home from outside noise. For example, in a busy city environmental noise is ever-present meaning occasional noise disturbance can be an issue. Installing double glazing helps to protect homeowners from noise pollution, and create a relaxed atmosphere free from unwanted external noise.</p>
+
+            <h3>Acoustic Performance</h3>
+            <p>Double glazing is well known for its ability to reduce outside noise levels. Simply replacing your single glazing with uPVC double glazing will help reduce the penetration of outside noise by up to 36 decibels.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Designed and Developed by DSK 2024 Golden Windows. All rights reserved.</p>
+        <div class="social-media">
+            <p>Follow us on:</p>
+            <a href="https://www.instagram.com/golden_windows_94/?igsh=MW8wa2duM29jZzJ1YQ%3D%3D" target="_blank">
+                <img src="./images/insta.jpg" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61561317246085" target="_blank">
+                <img src="./images/fb.png" alt="Facebook">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slides img");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                slideIndex = 0;
+            } else if (index < 0) {
+                slideIndex = slides.length - 1;
+            } else {
+                slideIndex = index;
+            }
+            const offset = -slideIndex * 100 + "%";
+            document.querySelector(".slides").style.transform = `translateX(${offset})`;
+        }
+
+        prevButton.addEventListener("click", () => showSlide(slideIndex - 1));
+        nextButton.addEventListener("click", () => showSlide(slideIndex + 1));
+
+        setInterval(() => showSlide(slideIndex + 1), 5000); // Auto-slide every 5 seconds
+    </script>
+</body>
+</html>
